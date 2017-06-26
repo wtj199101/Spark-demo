@@ -25,14 +25,12 @@
     <dependency>
         <groupId>org.springframework.kafka</groupId>
         <artifactId>spring-kafka</artifactId>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.kafka</groupId>
-        <artifactId>kafka-clients</artifactId>
+        <version>1.1.1.RELEASE</version>
     </dependency>
     <dependency>
         <groupId>org.apache.kafka</groupId>
         <artifactId>kafka-streams</artifactId>
+        <version>0.10.2.0</version>
     </dependency>
     <dependency>
         <groupId>org.apache.spark</groupId>
@@ -44,6 +42,7 @@
         <artifactId>spark-streaming_2.11</artifactId>
         <version>${scala.core.version}</version>
     </dependency>
+
     <dependency>
         <groupId>org.apache.spark</groupId>
         <artifactId>spark-streaming-kafka-0-10_2.11</artifactId>
@@ -79,6 +78,31 @@
         <groupId>org.codehaus.jackson</groupId>
         <artifactId>jackson-core-asl</artifactId>
         <version>1.9.9</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.hbase</groupId>
+        <artifactId>hbase</artifactId>
+        <version>0.98.4-hadoop2</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.hbase</groupId>
+        <artifactId>hbase-client</artifactId>
+        <version>0.98.4-hadoop2</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.hbase</groupId>
+        <artifactId>hbase-common</artifactId>
+        <version>0.98.4-hadoop2</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.hbase</groupId>
+        <artifactId>hbase-protocol</artifactId>
+        <version>0.98.4-hadoop2</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.hbase</groupId>
+        <artifactId>hbase-server</artifactId>
+        <version>0.98.4-hadoop2</version>
     </dependency>
 </dependencies>
     <build>
@@ -126,9 +150,6 @@
                 <groupId>org.mortbay.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>7.6.16.v20140903</version>
-                <configuration>
-                    <contextPath>/</contextPath>
-                </configuration>
             </plugin>
 
         </plugins>
