@@ -8,9 +8,9 @@
     <artifactId>SparkTest2</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
-        <scala.version>2.12.2</scala.version>
         <scala.core.version>2.1.0</scala.core.version>
         <spark-streaming-kafka.version>2.1.1</spark-streaming-kafka.version>
+        <hbase.version>1.2.0</hbase.version>
     </properties>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -82,27 +82,27 @@
     <dependency>
         <groupId>org.apache.hbase</groupId>
         <artifactId>hbase</artifactId>
-        <version>0.98.4-hadoop2</version>
+        <version>${hbase.version}</version>
     </dependency>
     <dependency>
         <groupId>org.apache.hbase</groupId>
         <artifactId>hbase-client</artifactId>
-        <version>0.98.4-hadoop2</version>
+        <version>${hbase.version}</version>
     </dependency>
     <dependency>
         <groupId>org.apache.hbase</groupId>
         <artifactId>hbase-common</artifactId>
-        <version>0.98.4-hadoop2</version>
+        <version>${hbase.version}</version>
     </dependency>
     <dependency>
         <groupId>org.apache.hbase</groupId>
         <artifactId>hbase-protocol</artifactId>
-        <version>0.98.4-hadoop2</version>
+        <version>${hbase.version}</version>
     </dependency>
     <dependency>
         <groupId>org.apache.hbase</groupId>
         <artifactId>hbase-server</artifactId>
-        <version>0.98.4-hadoop2</version>
+        <version>${hbase.version}</version>
     </dependency>
 </dependencies>
     <build>
