@@ -60,7 +60,6 @@ public class SparkMain {
         kafkaParams.put("bootstrap.servers", KAFKA_SERVERS);
         kafkaParams.put("group.id", KAFKA_GROUP_ID);
         kafkaParams.put("auto.offset.reset", KAFKA_OFFERT_RESET);
-//        kafkaParams.put("enable.auto.commit", KAFKA_AUTO_COMMIT);
 //        Collection<String> topics = Arrays.asList(KAFKA_TOPIC);
         Set<String> topics = new HashSet<String>(Arrays.asList(KAFKA_TOPIC));
 
@@ -76,7 +75,7 @@ public class SparkMain {
         final JobConf jc=new JobConf(conf);
         jc.setOutputFormat(TableOutputFormat.class);
         jc.set(TableOutputFormat.OUTPUT_TABLE,tableName);
-//#################从kafka中取得数据并封装###################################
+        //#################从kafka中取得数据并封装###################################
         JavaPairInputDStream<String, String> directStream = KafkaUtils.createDirectStream(jssc, String.class, String.class,
                 StringDecoder.class,
                 StringDecoder.class,
@@ -90,20 +89,11 @@ public class SparkMain {
                 return convertToPut("1","title","", stringStringTuple2._2());
             }
         });
-
-//        JavaPairDStream<ImmutableBytesWritable, Put> jpds = directStream.mapToPair(
-//            new PairFunction<ConsumerRecord<String, String>, ImmutableBytesWritable, Put>() {
-//                @Override
-//                public Tuple2<ImmutableBytesWritable, Put> call(ConsumerRecord<String, String> record) throws Exception {
-//                    //TODO 这里是封装数据,根据需求改变
-//                    return convertToPut("1","title","", record.value());
-//                }
-//            });
         //#############################保存数据进入hbase ##################
         jpds.foreachRDD(new VoidFunction2<JavaPairRDD<ImmutableBytesWritable, Put>, Time>() {
             @Override
             public void call(JavaPairRDD<ImmutableBytesWritable, Put> v1, Time v2) throws Exception {
-                System.out.println("aaaaaaaaaaaaaaaaa"+v1.count());
+                System.out.println("aaaaaaaaaaaaaaaaa"+v1.count()+",time="+v2.toString());
                 if(v1.count()>0){
                     v1.saveAsHadoopDataset(jc);
                 }
@@ -126,43 +116,5 @@ public class SparkMain {
         put.addColumn(Bytes.toBytes(column),Bytes.toBytes(qualifier),Bytes.toBytes(value));
         return new Tuple2<ImmutableBytesWritable, Put>(new ImmutableBytesWritable(), put);
     }
-//    public static void main(String[] args)  throws  Exception{
-//        Map<String, Object> kafkaParams = new HashMap<String, Object>();
-//        kafkaParams.put("bootstrap.servers", "192.168.12.102:9092");
-//        kafkaParams.put("key.deserializer", StringDeserializer.class);
-//        kafkaParams.put("value.deserializer", StringDeserializer.class);
-//        kafkaParams.put("group.id", "test-group");
-//        kafkaParams.put("auto.offset.reset", "latest");
-//        kafkaParams.put("enable.auto.commit", false);
-//        Collection<String> topics = Arrays.asList("test");
-//        SparkConf sc=new SparkConf().setAppName("Spark shell").setMaster("local[*]");
-//        JavaStreamingContext jssc=new JavaStreamingContext(sc,new Duration(10000));
-//        final JavaInputDStream<ConsumerRecord<String, String>> stream =
-//                KafkaUtils.createDirectStream(
-//                        jssc,
-//                        LocationStrategies.PreferConsistent(),
-//                        ConsumerStrategies.<String, String>Subscribe(topics, kafkaParams)
-//                );
-//        JavaPairDStream<String, String> jpds = stream.mapToPair(
-//                new PairFunction<ConsumerRecord<String, String>, String, String>() {
-//                    @Override
-//                    public Tuple2<String, String> call(ConsumerRecord<String, String> record) {
-//                        System.out.println("topci="+record.topic()+";key="+record.key()+";value="+record.value());
-//                        return new Tuple2<String, String>(record.key(), record.value());
-//                    }
-//                });
-//        System.out.println("#############begin");
-//        jpds.count().print();
-//        System.out.println("#############end");
-//        jssc.start();
-//        jssc.awaitTermination();
-//    }
-    //            JavaPairDStream<String, String> jpds = stream.mapToPair(
-//                new PairFunction<ConsumerRecord<String, String>, String, String>() {
-//                        @Override
-//                    public Tuple2<String, String> call(ConsumerRecord<String, String> record) {
-//                        System.out.println("topci="+record.topic()+";key="+record.key()+";value="+record.value());
-//                return new Tuple2<String, String>(record.key(), record.value());
-//                    }
-//                });
+
 }
