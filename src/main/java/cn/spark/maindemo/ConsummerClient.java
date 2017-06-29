@@ -1,4 +1,4 @@
-package cn.spark.productClient;
+package cn.spark.maindemo;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;

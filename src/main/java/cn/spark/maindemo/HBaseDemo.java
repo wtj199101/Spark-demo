@@ -1,4 +1,4 @@
-package cn.spark.productClient;
+package cn.spark.maindemo;
 
 import java.io.IOException;  
 import java.util.ArrayList;  

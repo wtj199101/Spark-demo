@@ -1,4 +1,4 @@
-package cn.spark.productClient;
+package cn.spark.maindemo;
 
 import com.alibaba.fastjson.JSONObject;
 import org.apache.kafka.clients.producer.KafkaProducer;

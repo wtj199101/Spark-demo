@@ -1,5 +1,4 @@
-package cn.spark.productClient;
-
+package cn.spark.maindemo;
 import kafka.serializer.StringDecoder;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.HBaseConfiguration;
@@ -24,19 +23,19 @@ import scala.Tuple2;
 import java.util.*;
 
 
-public class SparkReadUtils {
+public class SparkMain {
     //################# kafka ##########################
     private static final String CHECK_POINT_DIR="/checkpoint";
     private static final String KAFKA_TOPIC="test";
     private static final String HBASE_Table_Name="test";
     private static final String KAFKA_SERVERS="192.168.12.102:9092";
     private static final String KAFKA_GROUP_ID="test-group";
-//    private static final String KAFKA_OFFERT_RESET="latest";
+    //    private static final String KAFKA_OFFERT_RESET="latest";
     private static final String KAFKA_OFFERT_RESET="largest";//kafka 0.8 中是 largest and smallest
     private static final Boolean KAFKA_AUTO_COMMIT=false;
     //################# spark ##########################
     private static final String SPARK_APP_NAME="Spark shell";
-//    private static final String SPARK_MASTER="spark://dev-hadoop01:7077";
+    //    private static final String SPARK_MASTER="spark://dev-hadoop01:7077";
     private static final String SPARK_MASTER="local[*]";//本地
     private static final String SPARK_SERIALIZER="org.apache.spark.serializer.KryoSerializer";
     private static final Integer DUR_TIME=2000;
@@ -102,17 +101,17 @@ public class SparkReadUtils {
 //            });
         //#############################保存数据进入hbase ##################
         jpds.foreachRDD(new VoidFunction2<JavaPairRDD<ImmutableBytesWritable, Put>, Time>() {
-        @Override
-        public void call(JavaPairRDD<ImmutableBytesWritable, Put> v1, Time v2) throws Exception {
-            System.out.println("aaaaaaaaaaaaaaaaa"+v1.count());
-            if(v1.count()>0){
-                v1.saveAsHadoopDataset(jc);
+            @Override
+            public void call(JavaPairRDD<ImmutableBytesWritable, Put> v1, Time v2) throws Exception {
+                System.out.println("aaaaaaaaaaaaaaaaa"+v1.count());
+                if(v1.count()>0){
+                    v1.saveAsHadoopDataset(jc);
+                }
             }
-        }
-    });
+        });
 //
         return jssc;
-}
+    }
 
     /**
      *生成要插入hbase的数据格式
@@ -126,7 +125,7 @@ public class SparkReadUtils {
         Put put = new Put(Bytes.toBytes(row));
         put.addColumn(Bytes.toBytes(column),Bytes.toBytes(qualifier),Bytes.toBytes(value));
         return new Tuple2<ImmutableBytesWritable, Put>(new ImmutableBytesWritable(), put);
-}
+    }
 //    public static void main(String[] args)  throws  Exception{
 //        Map<String, Object> kafkaParams = new HashMap<String, Object>();
 //        kafkaParams.put("bootstrap.servers", "192.168.12.102:9092");
