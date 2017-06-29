@@ -8,9 +8,9 @@
     <artifactId>SparkTest2</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
-        <scala.core.version>2.1.0</scala.core.version>
+        <scala.core.version>2.0.2</scala.core.version>
         <spark-streaming-kafka.version>2.1.1</spark-streaming-kafka.version>
-        <hbase.version>1.2.0</hbase.version>
+        <hbase.version>1.2.4</hbase.version>
     </properties>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -36,6 +36,13 @@
         <groupId>org.apache.spark</groupId>
         <artifactId>spark-core_2.11</artifactId>
         <version>${scala.core.version}</version>
+        <exclusions>
+            <exclusion>
+                <artifactId>log4j</artifactId>
+                <groupId>log4j</groupId>
+            </exclusion>
+
+        </exclusions>
     </dependency>
     <dependency>
         <groupId>org.apache.spark</groupId>
@@ -52,7 +59,7 @@
     <dependency>
         <groupId>commons-lang</groupId>
         <artifactId>commons-lang</artifactId>
-        <version>2.3</version>
+        <version>2.4</version>
     </dependency>
     <dependency>
         <groupId>net.sf.json-lib</groupId>
