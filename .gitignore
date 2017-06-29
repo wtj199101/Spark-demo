@@ -2,8 +2,10 @@
 .idea
 .idea\
 target
+test
 target/generated-sources/
 SparkTest2.iml
 application-dev.properties
 out
 out/artifacts
+src/test/
