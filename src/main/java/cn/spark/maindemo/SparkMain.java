@@ -98,7 +98,6 @@ public class SparkMain {
                 }
             }
         });
-//
         return jssc;
     }
 
