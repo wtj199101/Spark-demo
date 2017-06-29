@@ -60,7 +60,6 @@ public class SparkMain {
         kafkaParams.put("bootstrap.servers", KAFKA_SERVERS);
         kafkaParams.put("group.id", KAFKA_GROUP_ID);
         kafkaParams.put("auto.offset.reset", KAFKA_OFFERT_RESET);
-//        Collection<String> topics = Arrays.asList(KAFKA_TOPIC);
         Set<String> topics = new HashSet<String>(Arrays.asList(KAFKA_TOPIC));
 
         SparkConf sc=new SparkConf().setAppName(SPARK_APP_NAME).setMaster(SPARK_MASTER);
