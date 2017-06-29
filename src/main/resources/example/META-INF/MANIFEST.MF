@@ -1,5 +1,0 @@
-Manifest-Version: 1.0
-Specification-Vendor: org.apache.spark
-Specification-Title: spark-examples
-Specification-Version: 1.6.0-typesafe-001
-
