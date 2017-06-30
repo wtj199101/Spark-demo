@@ -107,6 +107,7 @@
         <artifactId>spark-streaming-kafka_2.11</artifactId>
         <version>RELEASE</version>
     </dependency>
+
 </dependencies>
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
