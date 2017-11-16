@@ -1,0 +1,583 @@
+16:06:10.114 2404 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+16:06:11.396 3686 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:08:31.492 2120 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+16:08:32.715 3343 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:09:15.128 2014 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+16:09:16.341 3227 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:09:17.371 4257 [main] ERROR o.a.h.hbase.client.AsyncProcess - Failed to get region location 
+org.apache.hadoop.hbase.TableNotFoundException: Table 'user_info' was not found, got: hbase:namespace.
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.locateRegionInMeta(ConnectionManager.java:1300)
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.locateRegion(ConnectionManager.java:1181)
+	at org.apache.hadoop.hbase.client.AsyncProcess.submit(AsyncProcess.java:410)
+	at org.apache.hadoop.hbase.client.AsyncProcess.submit(AsyncProcess.java:359)
+	at org.apache.hadoop.hbase.client.BufferedMutatorImpl.backgroundFlushCommits(BufferedMutatorImpl.java:238)
+	at org.apache.hadoop.hbase.client.BufferedMutatorImpl.flush(BufferedMutatorImpl.java:190)
+	at org.apache.hadoop.hbase.client.HTable.flushCommits(HTable.java:1434)
+	at org.apache.hadoop.hbase.client.HTable.put(HTable.java:1018)
+	at org.springframework.data.hadoop.hbase.HbaseTemplate$3.doInTable(HbaseTemplate.java:203)
+	at org.springframework.data.hadoop.hbase.HbaseTemplate.execute(HbaseTemplate.java:61)
+	at org.springframework.data.hadoop.hbase.HbaseTemplate.put(HbaseTemplate.java:199)
+	at com.fulihui.open.data.manage.dao.HbaseDao.Hput(HbaseDao.java:50)
+	at com.fulihui.open.data.manage.dao.HbaseDao$$FastClassBySpringCGLIB$$77e04c33.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.fulihui.open.data.manage.dao.HbaseDao$$EnhancerBySpringCGLIB$$5adb200.Hput(<generated>)
+	at com.fulihui.open.data.manage.service.HbaseService.testInsert(HbaseService.java:19)
+	at com.fulihui.open.data.manage.HbaseTest.testHbase(HbaseTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:252)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:51)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+16:11:18.513 2208 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+16:11:19.825 3520 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:11:20.833 4528 [main] ERROR o.a.h.hbase.client.AsyncProcess - Failed to get region location 
+org.apache.hadoop.hbase.TableNotFoundException: Table 'user_info' was not found, got: hbase:namespace.
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.locateRegionInMeta(ConnectionManager.java:1300)
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.locateRegion(ConnectionManager.java:1181)
+	at org.apache.hadoop.hbase.client.AsyncProcess.submit(AsyncProcess.java:410)
+	at org.apache.hadoop.hbase.client.AsyncProcess.submit(AsyncProcess.java:359)
+	at org.apache.hadoop.hbase.client.BufferedMutatorImpl.backgroundFlushCommits(BufferedMutatorImpl.java:238)
+	at org.apache.hadoop.hbase.client.BufferedMutatorImpl.flush(BufferedMutatorImpl.java:190)
+	at org.apache.hadoop.hbase.client.HTable.flushCommits(HTable.java:1434)
+	at org.apache.hadoop.hbase.client.HTable.put(HTable.java:1018)
+	at org.springframework.data.hadoop.hbase.HbaseTemplate$3.doInTable(HbaseTemplate.java:203)
+	at org.springframework.data.hadoop.hbase.HbaseTemplate.execute(HbaseTemplate.java:61)
+	at org.springframework.data.hadoop.hbase.HbaseTemplate.put(HbaseTemplate.java:199)
+	at com.fulihui.open.data.manage.dao.HbaseDao.Hput(HbaseDao.java:50)
+	at com.fulihui.open.data.manage.dao.HbaseDao$$FastClassBySpringCGLIB$$77e04c33.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.fulihui.open.data.manage.dao.HbaseDao$$EnhancerBySpringCGLIB$$21fffa26.Hput(<generated>)
+	at com.fulihui.open.data.manage.service.HbaseService.testInsert(HbaseService.java:19)
+	at com.fulihui.open.data.manage.HbaseTest.testHbase(HbaseTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:252)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:51)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+16:11:51.008 2122 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+16:11:52.231 3345 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:11:53.266 4380 [main] ERROR o.a.h.hbase.client.AsyncProcess - Failed to get region location 
+org.apache.hadoop.hbase.TableNotFoundException: Table 'user_info1' was not found, got: hbase:namespace.
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.locateRegionInMeta(ConnectionManager.java:1300)
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.locateRegion(ConnectionManager.java:1181)
+	at org.apache.hadoop.hbase.client.AsyncProcess.submit(AsyncProcess.java:410)
+	at org.apache.hadoop.hbase.client.AsyncProcess.submit(AsyncProcess.java:359)
+	at org.apache.hadoop.hbase.client.BufferedMutatorImpl.backgroundFlushCommits(BufferedMutatorImpl.java:238)
+	at org.apache.hadoop.hbase.client.BufferedMutatorImpl.flush(BufferedMutatorImpl.java:190)
+	at org.apache.hadoop.hbase.client.HTable.flushCommits(HTable.java:1434)
+	at org.apache.hadoop.hbase.client.HTable.put(HTable.java:1018)
+	at org.springframework.data.hadoop.hbase.HbaseTemplate$3.doInTable(HbaseTemplate.java:203)
+	at org.springframework.data.hadoop.hbase.HbaseTemplate.execute(HbaseTemplate.java:61)
+	at org.springframework.data.hadoop.hbase.HbaseTemplate.put(HbaseTemplate.java:199)
+	at com.fulihui.open.data.manage.dao.HbaseDao.Hput(HbaseDao.java:50)
+	at com.fulihui.open.data.manage.dao.HbaseDao$$FastClassBySpringCGLIB$$77e04c33.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.fulihui.open.data.manage.dao.HbaseDao$$EnhancerBySpringCGLIB$$99134b38.Hput(<generated>)
+	at com.fulihui.open.data.manage.service.HbaseService.testInsert(HbaseService.java:19)
+	at com.fulihui.open.data.manage.HbaseTest.testHbase(HbaseTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:252)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:51)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+16:12:07.982 2154 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+16:12:09.221 3393 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:12:10.237 4409 [main] ERROR o.a.h.hbase.client.AsyncProcess - Failed to get region location 
+org.apache.hadoop.hbase.TableNotFoundException: Table 'user_info' was not found, got: hbase:namespace.
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.locateRegionInMeta(ConnectionManager.java:1300)
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.locateRegion(ConnectionManager.java:1181)
+	at org.apache.hadoop.hbase.client.AsyncProcess.submit(AsyncProcess.java:410)
+	at org.apache.hadoop.hbase.client.AsyncProcess.submit(AsyncProcess.java:359)
+	at org.apache.hadoop.hbase.client.BufferedMutatorImpl.backgroundFlushCommits(BufferedMutatorImpl.java:238)
+	at org.apache.hadoop.hbase.client.BufferedMutatorImpl.flush(BufferedMutatorImpl.java:190)
+	at org.apache.hadoop.hbase.client.HTable.flushCommits(HTable.java:1434)
+	at org.apache.hadoop.hbase.client.HTable.put(HTable.java:1018)
+	at org.springframework.data.hadoop.hbase.HbaseTemplate$3.doInTable(HbaseTemplate.java:203)
+	at org.springframework.data.hadoop.hbase.HbaseTemplate.execute(HbaseTemplate.java:61)
+	at org.springframework.data.hadoop.hbase.HbaseTemplate.put(HbaseTemplate.java:199)
+	at com.fulihui.open.data.manage.dao.HbaseDao.Hput(HbaseDao.java:50)
+	at com.fulihui.open.data.manage.dao.HbaseDao$$FastClassBySpringCGLIB$$77e04c33.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.fulihui.open.data.manage.dao.HbaseDao$$EnhancerBySpringCGLIB$$d4e0d19f.Hput(<generated>)
+	at com.fulihui.open.data.manage.service.HbaseService.testInsert(HbaseService.java:19)
+	at com.fulihui.open.data.manage.HbaseTest.testHbase(HbaseTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:252)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:51)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+16:16:20.313 2248 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+16:16:21.558 3493 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:17:11.555 2156 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+16:17:12.802 3403 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:22:06.436 2178 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+16:22:07.635 3377 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:22:08.645 4387 [main] ERROR o.a.h.hbase.client.AsyncProcess - Failed to get region location 
+org.apache.hadoop.hbase.TableNotFoundException: Table 'user_info' was not found, got: hbase:namespace.
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.locateRegionInMeta(ConnectionManager.java:1300)
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.locateRegion(ConnectionManager.java:1181)
+	at org.apache.hadoop.hbase.client.AsyncProcess.submit(AsyncProcess.java:410)
+	at org.apache.hadoop.hbase.client.AsyncProcess.submit(AsyncProcess.java:359)
+	at org.apache.hadoop.hbase.client.BufferedMutatorImpl.backgroundFlushCommits(BufferedMutatorImpl.java:238)
+	at org.apache.hadoop.hbase.client.BufferedMutatorImpl.flush(BufferedMutatorImpl.java:190)
+	at org.apache.hadoop.hbase.client.HTable.flushCommits(HTable.java:1434)
+	at org.apache.hadoop.hbase.client.HTable.put(HTable.java:1018)
+	at org.springframework.data.hadoop.hbase.HbaseTemplate$3.doInTable(HbaseTemplate.java:203)
+	at org.springframework.data.hadoop.hbase.HbaseTemplate.execute(HbaseTemplate.java:61)
+	at org.springframework.data.hadoop.hbase.HbaseTemplate.put(HbaseTemplate.java:199)
+	at com.fulihui.open.data.manage.dao.HbaseDao.Hput(HbaseDao.java:50)
+	at com.fulihui.open.data.manage.dao.HbaseDao$$FastClassBySpringCGLIB$$77e04c33.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.fulihui.open.data.manage.dao.HbaseDao$$EnhancerBySpringCGLIB$$2e268292.Hput(<generated>)
+	at com.fulihui.open.data.manage.service.HbaseService.testInsert(HbaseService.java:19)
+	at com.fulihui.open.data.manage.HbaseTest.testHbase(HbaseTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:252)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:51)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+16:24:13.527 2022 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+16:24:14.810 3305 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:24:15.827 4322 [main] ERROR o.a.h.hbase.client.AsyncProcess - Failed to get region location 
+org.apache.hadoop.hbase.TableNotFoundException: Table 'user_pro:user_info' was not found, got: hbase:namespace.
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.locateRegionInMeta(ConnectionManager.java:1300)
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.locateRegion(ConnectionManager.java:1181)
+	at org.apache.hadoop.hbase.client.AsyncProcess.submit(AsyncProcess.java:410)
+	at org.apache.hadoop.hbase.client.AsyncProcess.submit(AsyncProcess.java:359)
+	at org.apache.hadoop.hbase.client.BufferedMutatorImpl.backgroundFlushCommits(BufferedMutatorImpl.java:238)
+	at org.apache.hadoop.hbase.client.BufferedMutatorImpl.flush(BufferedMutatorImpl.java:190)
+	at org.apache.hadoop.hbase.client.HTable.flushCommits(HTable.java:1434)
+	at org.apache.hadoop.hbase.client.HTable.put(HTable.java:1018)
+	at org.springframework.data.hadoop.hbase.HbaseTemplate$3.doInTable(HbaseTemplate.java:203)
+	at org.springframework.data.hadoop.hbase.HbaseTemplate.execute(HbaseTemplate.java:61)
+	at org.springframework.data.hadoop.hbase.HbaseTemplate.put(HbaseTemplate.java:199)
+	at com.fulihui.open.data.manage.dao.HbaseDao.Hput(HbaseDao.java:50)
+	at com.fulihui.open.data.manage.dao.HbaseDao$$FastClassBySpringCGLIB$$77e04c33.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.fulihui.open.data.manage.dao.HbaseDao$$EnhancerBySpringCGLIB$$3dc51f48.Hput(<generated>)
+	at com.fulihui.open.data.manage.service.HbaseService.testInsert(HbaseService.java:19)
+	at com.fulihui.open.data.manage.HbaseTest.testHbase(HbaseTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:252)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:51)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+16:27:19.804 2024 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+16:27:21.070 3290 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:27:23.034 5254 [main] ERROR o.a.h.hbase.client.AsyncProcess - Failed to get region location 
+org.apache.hadoop.hbase.TableNotFoundException: Table 'user_pro:user_info' was not found, got: user_pro2:user_info.
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.locateRegionInMeta(ConnectionManager.java:1300)
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.locateRegion(ConnectionManager.java:1181)
+	at org.apache.hadoop.hbase.client.AsyncProcess.submit(AsyncProcess.java:410)
+	at org.apache.hadoop.hbase.client.AsyncProcess.submit(AsyncProcess.java:359)
+	at org.apache.hadoop.hbase.client.BufferedMutatorImpl.backgroundFlushCommits(BufferedMutatorImpl.java:238)
+	at org.apache.hadoop.hbase.client.BufferedMutatorImpl.flush(BufferedMutatorImpl.java:190)
+	at org.apache.hadoop.hbase.client.HTable.flushCommits(HTable.java:1434)
+	at org.apache.hadoop.hbase.client.HTable.put(HTable.java:1018)
+	at org.springframework.data.hadoop.hbase.HbaseTemplate$3.doInTable(HbaseTemplate.java:203)
+	at org.springframework.data.hadoop.hbase.HbaseTemplate.execute(HbaseTemplate.java:61)
+	at org.springframework.data.hadoop.hbase.HbaseTemplate.put(HbaseTemplate.java:199)
+	at com.fulihui.open.data.manage.dao.HbaseDao.Hput(HbaseDao.java:50)
+	at com.fulihui.open.data.manage.dao.HbaseDao$$FastClassBySpringCGLIB$$77e04c33.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.fulihui.open.data.manage.dao.HbaseDao$$EnhancerBySpringCGLIB$$d38f8028.Hput(<generated>)
+	at com.fulihui.open.data.manage.service.HbaseService.testInsert(HbaseService.java:19)
+	at com.fulihui.open.data.manage.HbaseTest.testHbase(HbaseTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:252)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:51)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+16:29:42.083 2162 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+16:29:43.332 3411 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:30:23.435 2165 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+16:30:24.652 3382 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:30:25.691 4421 [main] ERROR o.a.h.hbase.client.AsyncProcess - Failed to get region location 
+org.apache.hadoop.hbase.TableNotFoundException: Table 'user_info' was not found, got: hbase:namespace.
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.locateRegionInMeta(ConnectionManager.java:1300)
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.locateRegion(ConnectionManager.java:1181)
+	at org.apache.hadoop.hbase.client.AsyncProcess.submit(AsyncProcess.java:410)
+	at org.apache.hadoop.hbase.client.AsyncProcess.submit(AsyncProcess.java:359)
+	at org.apache.hadoop.hbase.client.BufferedMutatorImpl.backgroundFlushCommits(BufferedMutatorImpl.java:238)
+	at org.apache.hadoop.hbase.client.BufferedMutatorImpl.flush(BufferedMutatorImpl.java:190)
+	at org.apache.hadoop.hbase.client.HTable.flushCommits(HTable.java:1434)
+	at org.apache.hadoop.hbase.client.HTable.put(HTable.java:1018)
+	at org.springframework.data.hadoop.hbase.HbaseTemplate$3.doInTable(HbaseTemplate.java:203)
+	at org.springframework.data.hadoop.hbase.HbaseTemplate.execute(HbaseTemplate.java:61)
+	at org.springframework.data.hadoop.hbase.HbaseTemplate.put(HbaseTemplate.java:199)
+	at com.fulihui.open.data.manage.dao.HbaseDao.Hput(HbaseDao.java:50)
+	at com.fulihui.open.data.manage.dao.HbaseDao$$FastClassBySpringCGLIB$$77e04c33.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.fulihui.open.data.manage.dao.HbaseDao$$EnhancerBySpringCGLIB$$5cab099b.Hput(<generated>)
+	at com.fulihui.open.data.manage.service.HbaseService.testInsert(HbaseService.java:19)
+	at com.fulihui.open.data.manage.HbaseTest.testHbase(HbaseTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:252)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:51)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+16:31:04.729 2128 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+16:31:06.011 3410 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:31:07.054 4453 [main] ERROR o.a.h.hbase.client.AsyncProcess - Failed to get region location 
+org.apache.hadoop.hbase.TableNotFoundException: Table 'user_prouser_info' was not found, got: user_pro:user_info.
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.locateRegionInMeta(ConnectionManager.java:1300)
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.locateRegion(ConnectionManager.java:1181)
+	at org.apache.hadoop.hbase.client.AsyncProcess.submit(AsyncProcess.java:410)
+	at org.apache.hadoop.hbase.client.AsyncProcess.submit(AsyncProcess.java:359)
+	at org.apache.hadoop.hbase.client.BufferedMutatorImpl.backgroundFlushCommits(BufferedMutatorImpl.java:238)
+	at org.apache.hadoop.hbase.client.BufferedMutatorImpl.flush(BufferedMutatorImpl.java:190)
+	at org.apache.hadoop.hbase.client.HTable.flushCommits(HTable.java:1434)
+	at org.apache.hadoop.hbase.client.HTable.put(HTable.java:1018)
+	at org.springframework.data.hadoop.hbase.HbaseTemplate$3.doInTable(HbaseTemplate.java:203)
+	at org.springframework.data.hadoop.hbase.HbaseTemplate.execute(HbaseTemplate.java:61)
+	at org.springframework.data.hadoop.hbase.HbaseTemplate.put(HbaseTemplate.java:199)
+	at com.fulihui.open.data.manage.dao.HbaseDao.Hput(HbaseDao.java:50)
+	at com.fulihui.open.data.manage.dao.HbaseDao$$FastClassBySpringCGLIB$$77e04c33.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.fulihui.open.data.manage.dao.HbaseDao$$EnhancerBySpringCGLIB$$3e738173.Hput(<generated>)
+	at com.fulihui.open.data.manage.service.HbaseService.testInsert(HbaseService.java:19)
+	at com.fulihui.open.data.manage.HbaseTest.testHbase(HbaseTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:252)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:51)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+16:31:20.870 2118 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+16:31:22.111 3359 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:31:54.685 2107 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+16:31:55.906 3328 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:32:30.331 2266 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+16:32:31.620 3555 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:33:23.250 2137 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+16:33:24.444 3331 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:33:59.374 2073 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+16:34:00.646 3345 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:34:21.538 2083 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+16:34:22.802 3347 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:34:41.221 2156 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+16:34:42.536 3471 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:34:43.608 4543 [htable-pool2-t1] WARN  o.a.h.hbase.client.AsyncProcess - #3, table=user_pro:user_info, attempt=1/35 failed=1ops, last exception: org.apache.hadoop.hbase.regionserver.NoSuchColumnFamilyException: org.apache.hadoop.hbase.regionserver.NoSuchColumnFamilyException: Column family age does not exist in region user_pro:user_info,,1510821019690.e0f327a82dc45c346154504db0434a5f. in table 'user_pro:user_info', {NAME => 'info', BLOOMFILTER => 'ROW', VERSIONS => '1', IN_MEMORY => 'false', KEEP_DELETED_CELLS => 'FALSE', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', COMPRESSION => 'NONE', MIN_VERSIONS => '0', BLOCKCACHE => 'true', BLOCKSIZE => '65536', REPLICATION_SCOPE => '0'}
+	at org.apache.hadoop.hbase.regionserver.RSRpcServices.doBatchOp(RSRpcServices.java:765)
+	at org.apache.hadoop.hbase.regionserver.RSRpcServices.doNonAtomicRegionMutation(RSRpcServices.java:720)
+	at org.apache.hadoop.hbase.regionserver.RSRpcServices.multi(RSRpcServices.java:2168)
+	at org.apache.hadoop.hbase.protobuf.generated.ClientProtos$ClientService$2.callBlockingMethod(ClientProtos.java:33656)
+	at org.apache.hadoop.hbase.ipc.RpcServer.call(RpcServer.java:2196)
+	at org.apache.hadoop.hbase.ipc.CallRunner.run(CallRunner.java:112)
+	at org.apache.hadoop.hbase.ipc.RpcExecutor.consumerLoop(RpcExecutor.java:133)
+	at org.apache.hadoop.hbase.ipc.RpcExecutor$1.run(RpcExecutor.java:108)
+	at java.lang.Thread.run(Thread.java:745)
+ on dianshang1,16020,1509433252244, tracking started Thu Nov 16 16:34:43 CST 2017; not retrying 1 - final failure
+16:35:21.380 2119 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+16:35:22.656 3395 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:51:12.689 2169 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+16:51:14.042 3522 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:51:43.311 2289 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+16:51:44.639 3617 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:53:13.895 2105 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+16:53:15.150 3360 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:55:31.568 2196 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+16:55:32.826 3454 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:57:50.887 2111 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+16:57:52.238 3462 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16:58:49.326 2180 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+16:58:50.610 3464 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17:14:56.080 2101 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+17:14:57.408 3429 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17:15:33.193 2104 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+17:15:34.501 3412 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17:15:50.798 2170 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+17:15:52.108 3480 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17:17:50.061 2148 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+17:17:51.358 3445 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17:18:21.733 2150 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+17:18:22.923 3340 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17:18:23.213 2300 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+17:18:24.562 3649 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17:20:24.360 2162 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+17:20:25.681 3483 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17:21:18.443 2090 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+17:21:19.704 3351 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17:21:52.150 2079 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+17:21:53.446 3375 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17:22:15.245 2098 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+17:22:16.532 3385 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17:22:58.574 2112 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+17:22:59.884 3422 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17:23:21.217 2120 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+17:23:22.548 3451 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17:29:31.929 2053 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+17:29:33.241 3365 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17:30:04.039 2076 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+17:30:05.254 3291 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17:30:30.373 2112 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+17:30:31.595 3334 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17:31:02.742 2134 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+17:31:03.996 3388 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17:36:50.982 2061 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+17:36:52.241 3320 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17:36:59.429 2078 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+17:37:00.650 3299 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17:37:23.905 2054 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+17:37:25.304 3453 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17:37:38.162 2063 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+17:37:39.557 3458 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17:37:46.637 1991 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+17:37:47.837 3191 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17:37:57.870 2053 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+17:37:59.129 3312 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17:38:07.931 2049 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+17:38:09.143 3261 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17:40:11.195 2148 [main] WARN  o.s.d.h.h.HbaseConfigurationFactoryBean - Use of 'stopProxy' has been deprecated
+17:40:12.421 3374 [main] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
